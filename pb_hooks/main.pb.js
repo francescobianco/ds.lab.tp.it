@@ -7,6 +7,13 @@ routerAdd("GET", "/hello/:name", (c) => {
     return c.json(200, { "message": "Hello " + name })
 }, $apis.requireRecordAuth('users'))
 
+routerAdd("GET", "/:organization/:data_source/:action", (c) => {
+    let dataSource = c.pathParam("data_source")
+    let action = c.pathParam("action")
+    let organization = c.pathParam("organization")
+
+    return c.json(200, { "message": "Hello " + dataSource + organization + action })
+}, $apis.requireRecordAuth('users'))
 
 
 
