@@ -6,3 +6,6 @@ start:
 
 bash:
 	@docker compose exec pocketbase sh
+
+test-login:
+	@docker run $$(pwd)/tests:/tests javanile/selenium-test /tests/login.py
